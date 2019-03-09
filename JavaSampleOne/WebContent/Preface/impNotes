@@ -1,0 +1,38 @@
+NOTE:
+JDBCFilter & CookieFilter have the same  url-pattern =/*, 
+you must be configured to ensure that JDBCFilter  is  executed first. 
+Therefore, you need to declare the order in web.xml (There is no way to declare the order by Annotation).
+for this check "web.xml" file.
+
+
+
+eg.:
+
+Some JSP pages will be used to embed into other JSP page at Runtime, through the use of:
+<jsp:include page="_header.jsp"></jsp:include>
+<jsp:include page="_menu.jsp"></jsp:include>
+<jsp:include page="_footer.jsp"></jsp:include>
+
+
+17 Home Page
+When entering the default path, 
+eg enter the site's domain name it will display the home page (Case contextPath = ""), 
+you need to declare your home page in <welcome-file-list> of web.xml
+
+Link below is showing the content of the page index.html
+
+http://localhost:8081/SimpleWebApp/
+You need to design a home page as a JSP page to display dynamic information instead of a html page that contains static information.
+
+in "web.xml" add home
+<welcome-file-list>
+ 
+   <welcome-file>home</welcome-file>
+    
+   <welcome-file>index.html</welcome-file>
+    
+</welcome-file-list>
+
+
+
+
